@@ -1,0 +1,124 @@
+
+config dnsmasq
+	option localise_queries '1'
+	option local '/lan/'
+	option domain 'lan'
+	option expandhosts '1'
+	option authoritative '1'
+	option readethers '1'
+	option leasefile '/tmp/dhcp.leases'
+	option nonwildcard '1'
+	option localservice '1'
+	option ednspacket_max '1232'
+	option localuse '1'
+	option domainneeded '1'
+	option rebind_protection '0'
+	option port '53'
+	option noresolv '1'
+	option cachesize '0'
+	list server ''
+
+config dhcp 'lan'
+	option interface 'lan'
+	option dhcpv4 'server'
+	option ra_slaac '1'
+	list ra_flags 'managed-config'
+	list ra_flags 'other-config'
+	option ignore '1'
+
+config dhcp 'wan'
+	option interface 'wan'
+	option ignore '1'
+
+config odhcpd 'odhcpd'
+	option maindhcp '0'
+	option leasefile '/tmp/hosts/odhcpd'
+	option leasetrigger '/usr/sbin/odhcpd-update'
+	option loglevel '4'
+
+config srvhost
+	option srv '_vlmcs._tcp'
+	option target 'JalaOp'
+	option port '1688'
+	option class '0'
+	option weight '100'
+
+config host
+	option dns '1'
+	option name 'Jala-Mini'
+	option mac '7c:10:c9:4f:fc:ac'
+	option ip '192.168.123.10'
+
+config host
+	option name 'Jala-Master'
+	option dns '1'
+	option mac '10:c3:7b:a0:98:ec'
+	option ip '192.168.123.20'
+
+config host
+	option dns '1'
+	option name 'Realme-GT-da-shi-tan-suo-ban'
+	option mac 'c6:c8:62:3c:96:79'
+	option ip '192.168.123.11'
+
+config host
+	option dns '1'
+	option name 'yi-jia-Ace-2'
+	option mac 'b2:71:71:d1:d9:7a'
+	option ip '192.168.123.12'
+
+config host
+	option dns '1'
+	option name 'realme-X2'
+	option mac '58:85:e9:f9:69:a7'
+	option ip '192.168.123.13'
+
+config host
+	option dns '1'
+	option name 'MEIZU-PRO-7'
+	option mac '90:f0:52:08:53:d4'
+	option ip '192.168.123.14'
+
+config host
+	option name 'JDPad'
+	option dns '1'
+	option mac '00:92:fa:12:3c:67'
+	option ip '192.168.123.15'
+
+config host
+	option name '360-KIDSWATCH-W370'
+	option dns '1'
+	option mac 'e4:a3:2f:e8:9c:5d'
+	option ip '192.168.123.17'
+
+config host
+	option name 'Realme-neoB'
+	option dns '1'
+	option mac '7a:e3:7c:5d:62:bf'
+	option ip '192.168.123.21'
+
+config host
+	option name 'zhen-woGT-da-shi-tan-suo-ban'
+	option dns '1'
+	option mac 'ea:8f:ef:0d:78:75'
+	option ip '192.168.123.41'
+
+config host
+	option name 'yi-jia-Ace-2'
+	option dns '1'
+	option mac '46:2f:ce:d3:8c:41'
+	option ip '192.168.123.42'
+
+config host
+	option name 'Realme-neoB'
+	option dns '1'
+	option mac '1c:d1:07:d1:fe:39'
+	option ip '192.168.123.43'
+
+config host
+	option mac '1c:02:19:20:c9:a0'
+	option ip '192.168.123.30'
+	option name 'Oppo-K9'
+	option dns '1'
+
+

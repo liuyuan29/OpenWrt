@@ -1,0 +1,99 @@
+
+config smartdns
+	option tcp_server '1'
+	option ipv6_server '1'
+	option bind_device '1'
+	option serve_expired '1'
+	option cache_persist '1'
+	option resolve_local_hostnames '1'
+	option force_https_soa '1'
+	option rr_ttl_min '600'
+	option seconddns_tcp_server '1'
+	option dualstack_ip_selection '0'
+	option enabled '1'
+	option port '5053'
+	option auto_set_dnsmasq '0'
+	option server_name 'china'
+	option seconddns_no_speed_check '1'
+	option seconddns_no_dualstack_selection '1'
+	option cache_size '40960'
+	option seconddns_server_group 'passwall'
+	option seconddns_enabled '1'
+	option seconddns_port '6053'
+	option proxy_server 'socks5://192.168.123.253:7891'
+	option old_port '5053'
+	option old_enabled '1'
+	option old_auto_set_dnsmasq '0'
+
+config domain-rule
+
+config server
+	option enabled '1'
+	option name '移动1'
+	option ip '120.196.165.24'
+	option type 'tls'
+	option server_group 'china'
+	option addition_arg '-group china'
+
+config server
+	option enabled '1'
+	option name '移动2'
+	option ip '211.136.192.6'
+	option type 'tls'
+	option server_group 'china'
+	option addition_arg '-group china'
+
+config server
+	option enabled '1'
+	option name 'ALI DNS'
+	option ip '223.5.5.5'
+	option type 'tls'
+	option server_group 'china'
+	option addition_arg '-group china'
+
+config server
+	option enabled '1'
+	option name 'DNSPod DNS'
+	option ip '119.29.29.29'
+	option type 'tls'
+	option server_group 'china'
+	option addition_arg '-group china'
+
+config server
+	option name '114DNS'
+	option ip '114.114.114.114'
+	option enabled '0'
+	option type 'tls'
+	option server_group 'china'
+	option addition_arg '-group china'
+
+config server
+	option name 'CloudFlare DNS'
+	option ip '1.0.0.1'
+	option server_group 'passwall'
+	option addition_arg '-group passwall'
+	option exclude_default_group '1'
+	option enabled '1'
+	option type 'tcp'
+	option use_proxy '1'
+
+config server
+	option name 'Quad9 DNS'
+	option ip '9.9.9.9'
+	option server_group 'passwall'
+	option exclude_default_group '1'
+	option addition_arg '-group passwall'
+	option enabled '1'
+	option type 'tcp'
+	option use_proxy '1'
+
+config server
+	option name 'Google DNS'
+	option ip '8.8.8.8'
+	option server_group 'passwall'
+	option exclude_default_group '1'
+	option addition_arg '-group passwall'
+	option enabled '1'
+	option type 'tcp'
+	option use_proxy '1'
+
