@@ -24,6 +24,7 @@ rm -rf packages/lean/luci-app-zerotier
 git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
 git clone --depth=1 https://github.com/Jason6111/luci-app-netdata package/luci-app-netdata
 svn export https://github.com/haiibo/openwrt-packages/trunk/luci-app-quickstart package/luci-app-quickstart
+svn export https://github.com/haiibo/openwrt-packages/trunk/quickstart package/quickstart
 # svn export https://github.com/syb999/openwrt-19.07.1/trunk/package/network/services/msd_lite package/msd_lite
 
 # 科学上网插件
